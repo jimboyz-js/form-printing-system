@@ -8,6 +8,7 @@ import java.util.Properties;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
+import com.formdev.flatlaf.FlatLightLaf;
 import com.jimboyz.printingsystem.err.ErrorDialog;
 import com.jimboyz.printingsystem.pref.GUIProperties;
 
@@ -248,8 +249,23 @@ public class SetDefaultLaf {
 			systemLookAndFeel();
 			forCustom();
 			e.printStackTrace();
-			ErrorDialog.show(e+"\nClass not found. Try to change theme name or contact the System Administrator(Jimboy M. Sarona)");
+			ErrorDialog.show(e+"\nClass not found. Try to change theme name or contact the System Administrator(JS)");
 		}
+	}
+	
+	public static void flatLafLightLookAndFeel() {
+		// Set FlatLaf Light theme
+        try {
+			UIManager.setLookAndFeel(new FlatLightLaf());
+		} catch (UnsupportedLookAndFeelException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+
+        // Optional: Customize UI defaults before creating components
+        UIManager.put("Button.arc", 20); // Rounded buttons
+        UIManager.put("Component.arc", 15); // Rounded text fields, etc.
+        UIManager.put("TextComponent.arc", 10);
 	}
 	
 	private static void forCustom() {

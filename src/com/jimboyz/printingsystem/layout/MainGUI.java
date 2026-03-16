@@ -24,7 +24,7 @@ public class MainGUI extends WindowAdapter implements MyInterface {
 	public MainGUI() {
 		
 		frame.setPreferredSize(new Dimension(700, 640));
-		frame.setTitle("For Printing System - FPS v. 1.0.1");
+		frame.setTitle("Form Printing System - FPS v. 1.0.1");
 		frame.getContentPane().setLayout(new BorderLayout());
 		frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		frame.pack();

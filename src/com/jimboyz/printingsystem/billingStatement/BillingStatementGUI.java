@@ -183,12 +183,12 @@ public class BillingStatementGUI extends JPanel implements MyInterface {
 			public void actionPerformed(ActionEvent e) {
 				
 				showChargeInvoicePanel();
-				frame.setTitle("For Printing System - FPS v. 1.0.1 - Charge Invoice");
+				frame.setTitle("Form Printing System - FPS v. 1.0.1 - Charge Invoice");
 			}
 		}, new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				frame.setTitle("For Printing System - FPS v. 1.0.1");
+				frame.setTitle("Form Printing System - FPS v. 1.0.1");
 				showHome();
 			}
 		}, new ActionListener() {

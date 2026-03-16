@@ -5,8 +5,10 @@ import java.awt.Desktop;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
-import java.io.File;
-import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 
 import javax.swing.AbstractAction;
 import javax.swing.ActionMap;
@@ -21,7 +23,6 @@ import javax.swing.KeyStroke;
 import com.jimboyz.printingsystem.billingStatement.BillingStatementGUI;
 import com.jimboyz.printingsystem.chargeInvoice.ChargeInvoicePanelGUI;
 import com.jimboyz.printingsystem.layout.MainPanel;
-import com.jimboyz.printingsystem.pref.GUIProperties;
 
 public class ShowController {
 	
@@ -59,16 +60,43 @@ public class ShowController {
 	}
 	
 	public static void showUserGuid() {
-		try {
-			File file = new File(GUIProperties.HOME_DIR+"/.FPSv1.0.0/FPS-UserGuide.pdf");
-			if(file.exists()) {
-				Desktop.getDesktop().browse(file.toURI());
-			}
+//		try {
+//			Outside Package
+//			Using Desktop
+//			File file = new File(GUIProperties.HOME_DIR+"/.FPSv1.0.0/FPS-UserGuide.pdf");
+//			if(file.exists()) {
+//				Desktop.getDesktop().browse(file.toURI());
+//				return;
+//			}
 			
-			System.out.println("The system cannot find the file!");
-//			return;
 //			Desktop.getDesktop().browse(new File(GUIProperties.HOME_DIR+"/.FPSv1.0.0/FPS-UserGuide.pdf").toURI());
-		} catch (IOException  e) {
+			
+//			Using ResourceAsStream
+//			InputStream is = ShowController.class.getResourceAsStream("/com/jimboyz/user/FPS-UserGuide.pdf");
+//			if (is == null) {
+//	            System.out.println("File not found!");
+//	            return;
+//	        }
+//			is.close();
+			
+//			System.out.println("PDF loaded successfully!");
+//			
+//		} catch (Exception  e) {
+//			e.printStackTrace();
+//		}
+		
+//		try with resource
+		try (InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("com/jimboyz/user/FPS-UserGuide.pdf");) {
+			if( is == null ) {
+				System.out.println("PDF not found.");
+				return;
+			}
+			Path tempFile = Files.createTempFile("FPS-UserGuide", ".pdf");
+			Files.copy(is, tempFile, StandardCopyOption.REPLACE_EXISTING);
+			
+			Desktop.getDesktop().open(tempFile.toFile());
+			
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}

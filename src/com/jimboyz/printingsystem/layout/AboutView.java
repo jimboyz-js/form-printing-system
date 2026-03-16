@@ -99,7 +99,7 @@ public class AboutView {
 		SwingUtil.setLabelImageIcon(me, "/com/jimboyz/lts/images/jimboysEdit2.png");
 		me.setBorder(BorderFactory.createLineBorder(Color.BLUE,3));
 		
-		JLabel lblTitle = new JLabel("For Printing System");
+		JLabel lblTitle = new JLabel("Form Printing System");
 		lblTitle.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		lblTitle.setForeground(Color.WHITE);
 		
@@ -116,13 +116,13 @@ public class AboutView {
 		lblPrinterLogo.setBounds(10, panelCenter.getY()+panelCenter.getHeight() + 10, 105, 105);
 		lblPrinterLogo.setIcon(SwingUtil.setLabelImageIcon(lblPrinterLogo, "/com/jimboyz/lts/images/print_pref-9.png"));
 		
-		JLabel lblAbouts = new JLabel("<html><h3>FPS     -     Version 1.0.0</h3></html>");
+		JLabel lblAbouts = new JLabel("<html><h3>FPS     -     Version 1.0.1</h3></html>");
 		lblAbouts.setFont(SwingUtil.myFont("Consolas", Font.PLAIN, 12));
 		lblAbouts.setForeground(Color.WHITE);
 		lblAbouts.setBounds(lblPrinterLogo.getWidth() + 50, panelCenter.getY() + panelCenter.getHeight() + 5, 300, 50);
 		panel2.add(lblAbouts);
 		
-		JLabel lblAbout2 = new JLabel("<html><h3>Copyright © 2023, 2024</h3></html>");
+		JLabel lblAbout2 = new JLabel("<html><h3>Copyright © 2026</h3></html>");
 		lblAbout2.setFont(SwingUtil.myFont("Consolas", Font.PLAIN, 12));
 		lblAbout2.setForeground(Color.WHITE);
 		lblAbout2.setBounds(lblPrinterLogo.getWidth() + 30, lblAbouts.getY()+25, 300, 50);

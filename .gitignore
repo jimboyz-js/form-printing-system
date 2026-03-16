@@ -1,3 +1,4 @@
+/*jimBoYz*/
 jimboyResize5.png
 jimboys2crop.jpg
 jimboysEdit2.png
@@ -9,3 +10,13 @@ bin
 .settings/
 .classpath
 .project
+
+*.class
+*.log
+*.jar
+*.war
+*.ear
+target/
+build/
+.idea/
+.vscode/

@@ -39,6 +39,7 @@ public class GUIProperties implements MyInterface {
 	public static final String TEXTURE_LAF = "Texture";
 	public static final String SYSTEM_PLAF = "System";
 	public static final String CUSTOM_LAF = "Custom";
+	public static final String FLAT_LAF_LIGHT = "FlatLaf Light";
 
 	public static final String PLAF_METAL = "javax.swing.plaf.metal.MetalLookAndFeel";
 
@@ -216,6 +217,9 @@ public class GUIProperties implements MyInterface {
 					 SetDefaultLaf.systemLookAndFeel();
 				}else if(GUIProperties.lookAndFeelz.equals("Custom")) {
 					SetDefaultLaf.customLookAndFeel();
+				}else if(lookAndFeelz.equals(FLAT_LAF_LIGHT)) {
+					
+					SetDefaultLaf.flatLafLightLookAndFeel();
 				}
 				updatePref();
 			

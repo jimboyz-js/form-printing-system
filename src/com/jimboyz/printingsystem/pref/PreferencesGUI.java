@@ -239,7 +239,7 @@ public class PreferencesGUI extends JDialog {
 	}
 	
 	private JComboBox<?> laf() {
-		String[] lafList = {"Metal","Nimbus","Motif","System","Windows","Windows Classic","Acryl","Aero","Aluminium","Bernstein","Fast","Graphite","HiFi","Luna","McWin","Mint","Noire","Smart","Texture", "Custom"};
+		String[] lafList = {"Metal","Nimbus","Motif","System","Windows","Windows Classic","Acryl","Aero","Aluminium","Bernstein","Fast","Graphite","HiFi","Luna","McWin","Mint","Noire","Smart","Texture", "FlatLaf Light", "Custom"};
 		lafComboBox = new JComboBox<>(lafList);
 		lafComboBox.addActionListener(new ActionListener() {
 			
@@ -557,6 +557,13 @@ public class PreferencesGUI extends JDialog {
 				}else if(lafComboBox.getSelectedItem().equals("Custom")) {
 					
 					SetPreferences.setPref(txtBSTitle.getText().toString(), txtCITitle.getText().toString(), txtBsTIN.getText().toString(), txtCiTIN.getText().toString(), txtAddress.getText().toString(), txtProp.getText().toString(), GUIProperties.CUSTOM_LAF, cmbDateFormatString.getSelectedItem().toString(), cmbDateChooserFont.getSelectedItem().toString(), cmbDateChooserFontStyle.getSelectedItem().toString(), cmbDateChooserFontSize.getSelectedItem().toString(), cmbFont.getSelectedItem().toString(), cmbFontStyle.getSelectedItem().toString(), cmbFontSize.getSelectedItem().toString(), cmbFontColor.getSelectedItem().toString());
+					GUIProperties.loadLaf();
+					SetPreferences.updatePref(PreferencesGUI.this);
+					
+				}else if(lafComboBox.getSelectedItem().equals("FlatLaf Light")) {
+					// Added Code (FlatLaf) 
+					// March 16, 2026 Mon. 12:0-7, 8 PM
+					SetPreferences.setPref(txtBSTitle.getText().toString(), txtCITitle.getText().toString(), txtBsTIN.getText().toString(), txtCiTIN.getText().toString(), txtAddress.getText().toString(), txtProp.getText().toString(), GUIProperties.FLAT_LAF_LIGHT, cmbDateFormatString.getSelectedItem().toString(), cmbDateChooserFont.getSelectedItem().toString(), cmbDateChooserFontStyle.getSelectedItem().toString(), cmbDateChooserFontSize.getSelectedItem().toString(), cmbFont.getSelectedItem().toString(), cmbFontStyle.getSelectedItem().toString(), cmbFontSize.getSelectedItem().toString(), cmbFontColor.getSelectedItem().toString());
 					GUIProperties.loadLaf();
 					SetPreferences.updatePref(PreferencesGUI.this);
 					
