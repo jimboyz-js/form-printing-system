@@ -3,6 +3,7 @@ package com.jimboyz.printingsystem.billingStatement;
 import java.awt.BorderLayout;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.io.File;
 import java.util.HashMap;
 
 import javax.swing.JDialog;
@@ -10,6 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import com.jimboyz.printingsystem.layout.MyInterface;
+import com.jimboyz.printingsystem.pref.GUIProperties;
 
 import net.sf.jasperreports.engine.JREmptyDataSource;
 import net.sf.jasperreports.engine.JRException;
@@ -337,7 +339,8 @@ public class ShowPrintDialog extends JDialog implements MyInterface {
 			contentPanel.repaint();
 			contentPanel.revalidate();
 			
-			JasperDesign jasperDesign = JRXmlLoader.load("jimBoYz Ni ChOy/reportFeb122024.jrxml");
+			JasperDesign jasperDesign = JRXmlLoader.load(GUIProperties.HOME_DIR + File.separator + ".fps-invoice-print-v1.0.1" + File.separator + "reportFeb122024.jrxml");
+//			JasperDesign jasperDesign = JRXmlLoader.load(this.getClass().getClassLoader().getResourceAsStream("reportFeb122024.jrxml"));
 			JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
 			JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, hashMap, new JREmptyDataSource());
 			

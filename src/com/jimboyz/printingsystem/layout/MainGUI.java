@@ -67,6 +67,7 @@ public class MainGUI extends WindowAdapter implements MyInterface {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Exit");
+				System.exit(0);
 			}
 		});
 	}

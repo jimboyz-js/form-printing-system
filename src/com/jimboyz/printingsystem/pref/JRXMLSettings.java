@@ -411,14 +411,14 @@ public class JRXMLSettings extends JDialog implements MyInterface {
 			String fontSize = properties.getProperty("jrxmlFontSize");
 			String fontColor = properties.getProperty("jrxmlFontColor");
 			
-			File file = new File("jimBoYz Ni ChOy/reportFeb122024.jrxml");
-			File f = new File("jimBoYz Ni ChOy/jj.b");
+			File file = new File(GUIProperties.HOME_DIR + File.separator + ".fps-invoice-print-v1.0.1" + File.separator + "reportFeb122024.jrxml");
+			File fileCi = new File(GUIProperties.HOME_DIR + File.separator + ".fps-invoice-print-v1.0.1" + File.separator + "reportMarch162026.jrxml");
 			file.createNewFile();
-			f.createNewFile();
+			fileCi.createNewFile();
 			
 			BufferedWriter writer = new BufferedWriter(new FileWriter(file));
-			FileWriter write = new FileWriter(f);
-			
+//			FileWriter write = new FileWriter(fileCi);
+			BufferedWriter write = new BufferedWriter(new FileWriter(fileCi));
 			writer.write(JasperReportGenerator.setBillingReport(font, isBold, isItalic, isUnderline, isStrikeThrough, addressFontSize, fontSize, fontColor));
 			write.write(ChargeInvoiceReport.setChargeInvoiceReport(font, isBold, isItalic, isUnderline, isStrikeThrough, addressFontSize, fontSize, fontColor));
 			

@@ -1,12 +1,14 @@
 package com.jimboyz.printingsystem.layout;
 
 import java.awt.BorderLayout;
+import java.io.File;
 
 import javax.swing.JEditorPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
 import com.jimboyz.printingsystem.err.ErrorDialog;
+import com.jimboyz.printingsystem.pref.GUIProperties;
 
 public class License {
 	
@@ -18,7 +20,7 @@ public class License {
 		JEditorPane editor = new JEditorPane();
 		editor.setEditable(false);
 		editor.setContentType("text/html");
-		String path = System.getProperty("user.dir");
+		String path = GUIProperties.HOME_DIR + File.separator + ".fps-invoice-print-v1.0.1";
 		String fileSeparator = System.getProperty("file.separator");
 		path += fileSeparator+"LICENSE";
 		try {

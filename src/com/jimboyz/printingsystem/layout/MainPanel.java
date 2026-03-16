@@ -68,11 +68,11 @@ public class MainPanel extends JPanel implements MyInterface {
 		if(e.getSource() == chargeInvoicePanel) {
 			
 			new ShowController().showChargeInvoice(this, panelChargeInvoiceContainer);
-			frame.setTitle("For Printing System - FPS v. 1.0.1 - Charge Invoice");
+			frame.setTitle("Form Printing System - FPS v. 1.0.1 - Charge Invoice");
 		}else if(e.getSource() == billingStatementPanel) {
 			
 			new ShowController().showBillingStatement(this, panelBillingStatementContainer);
-			frame.setTitle("For Printing System - FPS v. 1.0.1 - Billing Statement");
+			frame.setTitle("Form Printing System - FPS v. 1.0.1 - Billing Statement");
 			
 		}
 	}

@@ -1,11 +1,11 @@
 package com.jimboyz.printingsystem.main;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Properties;
 
 import javax.swing.SwingUtilities;
@@ -23,7 +23,7 @@ import com.jimboyz.printingsystem.pref.JRXMLSettings;
  * Date Finished: Jan. 30, 2024
  * Date Update: March 15, 2026 SUN.
  * Update data and remove some personal images
- * To be put on public repo on my GitHub repository (github.com/jimboyz-js)
+ * To be put in public (repo) in my GitHub repository (github.com/jimboyz-js)
  *
  */
 
@@ -31,35 +31,37 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		File file = new File("jimBoYz Ni ChOy");
+		File file = new File(GUIProperties.HOME_DIR+"/.fps-invoice-print-v1.0.1");
 		if(!file.exists()) {
 			file.mkdir();
 		}
 		
-		try {
-			InputStream is = Main.class.getResourceAsStream("/FPS-UserGuide.pdf");
-			if(is != null) {
-				BufferedReader br = new BufferedReader(new InputStreamReader(is));
-				/*
-				String line;
-				while((line = br.readLine()) != null) {
-					System.out.println(line);
+		// LICENSE
+		Path output = Path.of(GUIProperties.HOME_DIR + File.separator + ".fps-invoice-print-v1.0.1" + File.separator + "LICENSE");
+		
+		if(!Files.exists(output)) {
+			try(InputStream is = Main.class.getResourceAsStream("/com/jimboyz/user/LICENSE")) {
+				if(is == null) {
+					throw new RuntimeException("Resource not found: " + output);
 				}
-				*/
-				
-				br.close();
-			}else {
-				System.out.println("Cannot find file");
+				Files.copy(is, output);
+//				Files.copy(is, output, StandardCopyOption.REPLACE_EXISTING);
+				System.out.println("File extracted to: " + output.toAbsolutePath());
+			} catch(Exception e) {
+				ErrorDialog.show(e);
 			}
-		}catch(IOException e) {
-			ErrorDialog.show(e);
 		}
 	
 		setPrefFile();
 		GUIProperties.loadLaf();
 		
-		File f = new File("jimBoYz Ni ChOy/reportFeb122024.jrxml");
+		File f = new File(GUIProperties.HOME_DIR + File.separator + ".fps-invoice-print-v1.0.1" + File.separator + "reportFeb122024.jrxml");
 		if(!f.exists()) {
+			JRXMLSettings.getJrxmlSettings();
+		}
+		
+		File fCi = new File(GUIProperties.HOME_DIR + File.separator + ".fps-invoice-print-v1.0.1" + File.separator + "reportMarch162026.jrxml");
+		if(!fCi.exists()) {
 			JRXMLSettings.getJrxmlSettings();
 		}
 		
@@ -98,6 +100,9 @@ public class Main {
 			properties.put("fontColor", "Black");
 			
 			properties.store(new FileOutputStream(GUIProperties.HOME_DIR+"/.FPSv1.0.0/Properties.prefs"), "jimBoYz Ni ChOy!!!");
+			
+			// JRXMLSettings
+			restoreJRXMLSettings();
 		}catch(IOException e) {
 			e.printStackTrace();
 			ErrorDialog.show(e);
@@ -111,6 +116,16 @@ public class Main {
 			e.printStackTrace();
 		}
 		
+	}
+	
+	/**
+	 * @author jimBoYz Ni ChOy!!!
+	 * March 16, 2026 Mon. 6:27-28 PM
+	 */
+	public static void restoreJRXMLSettings() {
+		setJrxmlSettings();
+		// Load JRXML File
+		JRXMLSettings.getJrxmlSettings();
 	}
 	
 	public static void setJrxmlSettings() {

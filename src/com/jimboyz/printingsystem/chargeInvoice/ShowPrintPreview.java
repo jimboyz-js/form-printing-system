@@ -3,6 +3,7 @@ package com.jimboyz.printingsystem.chargeInvoice;
 import java.awt.BorderLayout;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.io.File;
 import java.util.HashMap;
 
 import javax.swing.JDialog;
@@ -10,6 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import com.jimboyz.printingsystem.layout.MyInterface;
+import com.jimboyz.printingsystem.pref.GUIProperties;
 
 import net.sf.jasperreports.engine.JREmptyDataSource;
 import net.sf.jasperreports.engine.JRException;
@@ -386,7 +388,7 @@ private static final long serialVersionUID = 1L;
 			contentPanel.revalidate();
 			
 			//JasperDesign jasperDesign = JRXmlLoader.load("C:\\Users\\jimboy\\JaspersoftWorkspace\\ForPrintingSystemChargeInvoice_Jan172024\\chargeInvoice2Jan172024.jrxml");
-			JasperDesign jasperDesign = JRXmlLoader.load("C:\\Users\\jimboy\\Desktop\\jre\\sample_.jrxml");
+			JasperDesign jasperDesign = JRXmlLoader.load(GUIProperties.HOME_DIR + File.separator + ".fps-invoice-print-v1.0.1" + File.separator + "reportMarch162026.jrxml");
 			JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
 			JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, hashMap, new JREmptyDataSource());
 			

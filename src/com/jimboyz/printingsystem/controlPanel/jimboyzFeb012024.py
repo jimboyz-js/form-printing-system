@@ -1,1 +1,0 @@
-print("jimBoYz Ni ChOy!!!")
