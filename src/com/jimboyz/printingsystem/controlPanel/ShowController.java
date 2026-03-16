@@ -86,7 +86,7 @@ public class ShowController {
 //		}
 		
 //		try with resource
-		try (InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("com/jimboyz/user/FPS-UserGuide.pdf");) {
+		try (InputStream is = Thread.currentThread().getContextClassLoader().getResourceAsStream("com/jimboyz/user/fps – user-guide.pdf");) {
 			if( is == null ) {
 				System.out.println("PDF not found.");
 				return;
