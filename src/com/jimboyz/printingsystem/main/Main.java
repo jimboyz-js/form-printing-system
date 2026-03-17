@@ -19,11 +19,10 @@ import com.jimboyz.printingsystem.pref.JRXMLSettings;
 
 /**
  * 
- * @author jimboy Ni ChOy!!!
- * Date Finished: Jan. 30, 2024
- * Date Update: March 15, 2026 SUN.
- * Update data and remove some personal images
- * To be put in public (repo) in my GitHub repository (github.com/jimboyz-js)
+ * @author jimBoYz Ni ChOy!!!
+ * Date Finished: January. 30, 2024
+ * Last Updated: March 15, 2026 SUN.
+ * Updated the data and removed personal images to prepare the project for public release on GitHub (github.com/user).
  *
  */
 

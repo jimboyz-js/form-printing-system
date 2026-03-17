@@ -2,7 +2,9 @@
 
 FPS (Form Printing System) is a lightweight Java desktop application designed to simplify the printing of structured documents such as **Billing Statements** and **Charge Invoices**.
 
-The system was originally developed as an internal tool for a client company to automate and standardize their printing workflow.
+The system was originally developed following a request to address printing issues related to Billing Statements and Charge Invoices for a client organization. It was not commercially distributed.
+
+This project is not a full billing system. It assists users in inputting and printing required information onto existing billing statement and charge invoice templates, reducing manual writing.
 
 ## Features
 

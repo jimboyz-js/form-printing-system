@@ -122,19 +122,19 @@ public class AboutView {
 		lblAbouts.setBounds(lblPrinterLogo.getWidth() + 50, panelCenter.getY() + panelCenter.getHeight() + 5, 300, 50);
 		panel2.add(lblAbouts);
 		
-		JLabel lblAbout2 = new JLabel("<html><h3>Copyright © 2026</h3></html>");
+		JLabel lblAbout2 = new JLabel("<html><h3>© 2026</h3></html>");
 		lblAbout2.setFont(SwingUtil.myFont("Consolas", Font.PLAIN, 12));
 		lblAbout2.setForeground(Color.WHITE);
 		lblAbout2.setBounds(lblPrinterLogo.getWidth() + 30, lblAbouts.getY()+25, 300, 50);
 		panel2.add(lblAbout2);
 		
-		JLabel lblAbout3 = new JLabel("<html><h3>By: jimBoYz Ni ChOy!!! </h3></html>");
+		JLabel lblAbout3 = new JLabel("<html><h3>Jimboyz-JS, </h3></html>");
 		lblAbout3.setFont(SwingUtil.myFont("Consolas", Font.PLAIN, 12));
 		lblAbout3.setForeground(Color.WHITE);
-		lblAbout3.setBounds(lblPrinterLogo.getWidth() + 30, lblAbout2.getY()+25, 300, 50);
+		lblAbout3.setBounds(lblAbout2.getX() + 53, lblAbout2.getY(), 300, 50); //Modified
 		panel2.add(lblAbout3);
 		
-		JLabel lblAbout4 = new JLabel("<html><h3>of JS Software and</h3></html>");
+		JLabel lblAbout4 = new JLabel("<html><h3>JS Software and</h3></html>");
 		lblAbout4.setFont(SwingUtil.myFont("Consolas", Font.PLAIN, 12));
 		lblAbout4.setForeground(Color.WHITE);
 		lblAbout4.setBounds(lblPrinterLogo.getWidth() + 30, lblAbout3.getY()+25, 330, 50);
@@ -146,11 +146,17 @@ public class AboutView {
 		lblAbout5.setBounds(lblPrinterLogo.getWidth() + 30, lblAbout4.getY()+25, 330, 50);
 		panel2.add(lblAbout5);
 		
+		JLabel lblAbout6 = new JLabel("<html><h3>All Rights Reserved.</h3></html>");
+		lblAbout6.setFont(SwingUtil.myFont("Consolas", Font.PLAIN, 12));
+		lblAbout6.setForeground(Color.WHITE);
+		lblAbout6.setBounds(lblPrinterLogo.getWidth() + 30, lblAbout5.getY()+25, 330, 50);
+		panel2.add(lblAbout6);
+		
 		JPanel panelContactInfo = new JPanel(new FlowLayout());
 		panelContactInfo.setBounds(7, 247, 400, 20);
 		panelContactInfo.setBackground(Color.red);
 		
-		JLabel lblContactInfo = new JLabel("Contact me @: https://jimboyz-myemail.web.app/");
+		JLabel lblContactInfo = new JLabel("Contact: https://jimboyz-myemail.web.app/");
 		lblContactInfo.setBounds(7, lblPrinterLogo.getY()+lblPrinterLogo.getHeight()+62, 400, 20);
 		lblContactInfo.setToolTipText("Go to");
 		lblContactInfo.setForeground(Color.WHITE);
