@@ -44,7 +44,7 @@ public class License {
 					+ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\r\n"
 					+ "\r\n"
 					+ "See the GNU General Public License for more details.</p>"
-					+ "<p style=\"line-height:1.8; text-align:justify;\">A full copy of the license is included with this software.</p><span style=\"color:red;\">"+path+"</span></html>");
+					+ "<p style=\"line-height:1.8; text-align:justify;\" font face=\"Consolas\">A full copy of the license is included with this software.</p><span style=\"color:red;\">"+path+"</span></html>");
 			
 		} catch (Exception e) {
 			e.printStackTrace();
