@@ -1,6 +1,6 @@
 # FPS – Form Printing System
 
-FPS (Form Printing System) is a lightweight Java desktop application designed to simplify the printing of structured documents such as **Billing Statements** and **Charge Invoices**.
+FPS (Form Printing System) is a lightweight Java desktop application designed to simplify the process of inputting and printing data onto **billing statement** and **charge invoice** templates.
 
 The system was originally developed following a request to address printing issues related to Billing Statements and Charge Invoices for a client organization. It was not commercially distributed.
 
@@ -8,12 +8,12 @@ This project is not a full billing system. It assists users in inputting and pri
 
 ## Features
 
-- Generate and print **Billing Statements**
-- Generate and print **Charge Invoices**
+- Input and print data onto Billing Statement templates
+- Input and print data onto Charge Invoice templates
 - Keyboard shortcut support for faster navigation
 - Customizable **Look and Feel themes**
 - Configurable **calendar date selector**
-- Printable reports powered by **JasperReports**
+- Template-based printing powered by **JasperReports**
 - Simple and lightweight **Java Swing interface**
 
 ## Technologies Used
@@ -68,7 +68,7 @@ These templates allow customization of:
 
 ## Purpose
 
-This project demonstrates a practical Java desktop solution for structured document printing and report generation.
+This project demonstrates a practical Java desktop solution for inputting and printing data onto structured document templates such as billing statements and charge invoices.
 
 ## License
 
