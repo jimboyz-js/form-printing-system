@@ -64,7 +64,7 @@ These templates allow customization of:
 
 - Font styles
 - Text formatting (Bold, Italic, Underline)
-- Layout adjustments
+- _Layout adjustments_
 
 ## Purpose
 
